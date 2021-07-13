@@ -12,13 +12,14 @@
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <!-- MY CSS -->
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <title>SMPN 29 Bandung | My School</title>
 </head>
 
-<body id="home">
+<body id="beranda">
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand">
         <img src="img/SMPN29.png" alt="" width="30" height="35" class="d-inline-block align-text-top">
         SMPN 29 BANDUNG
       </a>
@@ -29,7 +30,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#home">Home</a>
+            <a class="nav-link active" href="#beranda" aria-current="page">Beranda</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#about">Materi</a>
@@ -46,8 +47,10 @@
   </nav>
   <section class="jumbotron text-center">
     <img src="img/ok.jpg" alt="Aditya Setiadi" width="200" class="rounded-circle img-thumbnail" />
-    <h1 class="display-4"><b>Aditya Setiadi</b></h1>
-    <p class="lead"><b>Teacher | Web Developer</b></p>
+    <h1 class="display-4" data-aos="fade-right" data-aos-duration="1000"><b>Aditya Setiadi</b>
+    </h1>
+    <p class="lead" data-aos="fade-left" data-aos-duration="2000"><b>Teacher | Web Developer</b>
+    </p>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
       <path fill="#fff" fill-opacity="1"
         d="M0,128L48,117.3C96,107,192,85,288,106.7C384,128,480,192,576,192C672,192,768,128,864,122.7C960,117,1056,171,1152,176C1248,181,1344,139,1392,117.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
@@ -55,13 +58,13 @@
     </svg>
   </section>
   <section id="about">
-    <div class="container">
+    <div class="container" data-aos="fade-down" data-aos-offset="400" data-aos-duration="1000">
       <div class="row text-center mb-3">
         <div class="col">
-          <h2>Materi</h2>
+          <h2>About</h2>
         </div>
       </div>
-      <div class="row justify-content-center fs-5">
+      <div class="row justify-content-center fs-5 text-center">
         <div class="col-md-6">
           <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut minus deserunt debitis quae minima molestiae
             maiores id, nihil facilis natus, illum ex dolorem. Tenetur eos fugiat quos omnis, qui totam molestiae
@@ -152,20 +155,28 @@
     </div>
     <div class="row justify-content-center m-1">
       <div class="col-md-4">
-        <form>
+        <div class="alert alert-success alert-dismissible fade show d-none my-alert" role="alert">
+          <strong>Terima Kasih!</strong> Pesan ada sudah kami terima.
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <form name="submit-to-google-sheet">
           <div class="mb-3">
             <label for="name" class="form-label">Nama Lengkap</label>
-            <input type="text" class="form-control" id="name" aria-describedby="name">
+            <input type="text" class="form-control" id="name" name="nama" aria-describedby="name" required>
           </div>
           <div class="mb-3">
             <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" aria-describedby="email">
+            <input type="email" class="form-control" id="email" name="email" aria-describedby="email" required>
           </div>
           <div class="mb-3">
             <label for="pesan" class="form-label">Pesan</label>
-            <textarea class="form-control" name="pesan" id="pesan" rows="3"></textarea>
+            <textarea class="form-control" name="pesan" id="pesan" rows="3" required></textarea>
           </div>
-          <button type="submit" class="btn btn-primary">Kirim</button>
+          <button type="submit" class="btn btn-primary btn-kirim">Kirim</button>
+          <button class="btn btn-primary btn-loading d-none" type="button" disabled>
+            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            Loading...
+          </button>
         </form>
       </div>
     </div>
@@ -185,6 +196,66 @@
   <!-- Option 1: Bootstrap Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+  </script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script>
+  <script>
+    gsap.from('.jumbotron img', {
+      duration: 1.5,
+      y: -100,
+      opacity: 0,
+      ease: 'bounce'
+    });
+    gsap.from('.navbar', {
+      duration: 1,
+      y: -100,
+      opacity: 0,
+      ease: 'bounce'
+    });
+  </script>
+  <script>
+    const scriptURL =
+      'https://script.google.com/macros/s/AKfycby00UpSD3N9epOvKa3V3JIlFbDXEqR0LLl4vdRyblGm-IHZxyc1PfTmMtUhhhoneOdr8A/exec'
+    const form = document.forms['submit-to-google-sheet'];
+    const btnKirim = document.querySelector('.btn-kirim');
+    const btnLoading = document.querySelector('.btn-loading');
+    const myAlert = document.querySelector('.my-alert');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      //Ketika tombol submit diklik
+      //Tampilkan tombol loading, hilangkan tombol kirim
+      btnLoading.classList.toggle('d-none');
+      btnKirim.classList.toggle('d-none');
+      fetch(scriptURL, {
+          method: 'POST',
+          body: new FormData(form)
+        })
+        .then(response => {
+          //Tampilkan tombol kirim, hilangkan tombol loading
+          btnLoading.classList.toggle('d-none');
+          btnKirim.classList.toggle('d-none');
+          //tampilkan alert
+          myAlert.classList.toggle('d-none');
+          //reset formnya
+          form.reset();
+          console.log('Success!', response)
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+  <script>
+    const navLinks = document.querySelectorAll('.nav-item')
+    const menuToggle = document.getElementById('navbarNav')
+    const bsCollapse = new bootstrap.Collapse(menuToggle)
+    navLinks.forEach((l) => {
+      l.addEventListener('click', () => {
+        bsCollapse.toggle()
+      })
+    })
   </script>
 </body>
 
