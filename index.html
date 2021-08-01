@@ -68,21 +68,17 @@
         </div>
       </div>
       <div class="row justify-content-center">
-        <div class="row">
-          <div class="col-md-1">
-            <img src="img/pilkom.jpg" alt="yasep" width="100" class="rounded-circle img-thumbnail my-3" />
-          </div>
-          <div class="col-md-4 my-3">
-            <h5>Channel YouTube :</h5>
-            <h4>Pilkom Mobile</h4>
-          </div>
+        <div class="col my-3">
+          <h5> <img src="img/pilkom.jpg" alt="yasep" width="50" class="rounded-circle img-thumbnail" />
+            YT Channel : Pilkom Mobile</h5>
+          <a href="https://www.youtube.com/watch?v=ru4ECp8tAsk" class="btn btn-danger text-center"><i
+              class="bi bi-youtube"></i> Tonton langsung di
+            YouTube</a>
         </div>
-        <div class="embed-responsive embed-responsive-16by9">
-          <iframe width="1280" height="720" src="https://www.youtube.com/embed/ru4ECp8tAsk" title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
-        </div>
+        <iframe width="1280" height="720" src="https://www.youtube.com/embed/ru4ECp8tAsk" title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
       </div>
     </div>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -108,11 +104,11 @@
               <div class="mb-3">
                 <h5>Isi data diri anda dengan baik dan benar!</h5>
                 <label for="name" class="form-label">Nama Lengkap</label>
-                <input type="text" class="form-control" id="name" name="nama" aria-describedby="name" required>
+                <input type="text" class="form-control" name="nama" aria-describedby="name" required>
               </div>
               <div class="mb-3">
                 <label for="kelas" class="form-label">Kelas</label>
-                <select class="form-select" aria-label="Default select example">
+                <select class="form-select" aria-label="Default select example" name="kelas">
                   <option value="9A">9A</option>
                   <option value="9B">9B</option>
                   <option value="9C">9C</option>
@@ -127,38 +123,38 @@
               </div>
               <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" name="email" aria-describedby="email" required>
+                <input type="email" class="form-control" name="email" aria-describedby="email" required>
               </div>
               <div class="mb-3">
                 <label for="nomor" class="form-label">Nomor telepon</label>
-                <input type="number" class="form-control" id="nomor" name="nomor" aria-describedby="nomor" required>
+                <input type="number" class="form-control" name="telepon" aria-describedby="nomor" required>
               </div>
             </div>
             <div class="col md-6">
               <div class="mb-3">
                 <h5>Pikeun maham eusi pedaran di luhur, pek jawab panaya di handap!</h5>
                 <label for="pesan" class="form-label">1. Naon anu disebut biantara teh?</label>
-                <textarea class="form-control" name="pesan" id="pesan" rows="2" required></textarea>
+                <textarea class="form-control" name="jawab1" rows="2" required></textarea>
               </div>
               <div class="mb-3">
                 <label for="pesan" class="form-label">2. Naon anu disebut biantara pamapag teh?</label>
-                <textarea class="form-control" name="pesan" id="pesan" rows="2" required></textarea>
+                <textarea class="form-control" name="jawab2" rows="2" required></textarea>
               </div>
               <div class="mb-3">
                 <label for="pesan" class="form-label">3. Naon anu biasa dikedalkeun dina bagian bubuka biantara?</label>
-                <textarea class="form-control" name="pesan" id="pesan" rows="2" required></textarea>
+                <textarea class="form-control" name="jawab3" rows="2" required></textarea>
               </div>
               <div class="mb-3">
                 <label for="pesan" class="form-label">4. Naon bae anu ditepikeun dina eusi biantara? Jentrekeun!</label>
-                <textarea class="form-control" name="pesan" id="pesan" rows="2" required></textarea>
+                <textarea class="form-control" name="jawab4" rows="2" required></textarea>
               </div>
               <div class="mb-3">
                 <label for="pesan" class="form-label">5. Naon anu biasa dikedalkeun dina bagian panutup
                   biantara?</label>
-                <textarea class="form-control" name="pesan" id="pesan" rows="2" required></textarea>
+                <textarea class="form-control" name="jawab5" rows="2" required></textarea>
               </div>
               <div class="alert alert-success alert-dismissible fade show d-none my-alert" role="alert">
-                <strong>Terima Kasih!</strong> Pesan ada sudah kami terima.
+                <strong>Terima Kasih!</strong> Jawaban anda sudah kami terima. Semoga semua jawabannya benar yaa :)
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
               </div>
               <button type="submit" class="btn btn-primary btn-kirim">Kirim</button>
