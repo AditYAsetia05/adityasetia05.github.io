@@ -43,7 +43,7 @@
     </div>
   </nav>
   <section class="jumbotron text-center">
-    <img src="img/ok.jpg" alt="aditya" width="200" class="rounded-circle img-thumbnail" />
+    <img src="img/pilkom.jpg" alt="aditya" width="200" class="rounded-circle img-thumbnail" />
     <h1 class="display-4" data-aos="fade-right" data-aos-duration="1000"><b>Aditya Setiadi</b>
     </h1>
     <p class="lead" data-aos="fade-left" data-aos-duration="2000"><b>Teacher | Youtuber | Web Developer</b>
@@ -63,26 +63,27 @@
           <h2><b>BAB 2 : Interaksi Manusia dan Komputer</b></h2>
           <h4>A. Interaksi Manusia dan Komputer <i class="bi bi-check-circle text-primary"></i></h4>
           <h4>B. Algoritma dan Pemrograman <i class="bi bi-check-circle text-primary"></i></h4>
+          <h4>C. Pemrograman Dasar Lanjutan <i class="bi bi-check-circle text-primary"></i></h4>
           <hr>
           <div class="row justify-content-center">
             <h5 class="text-center">
-              <b><i>Materi Pekan ke 3 (Jum'at, 22 Oktober 2021)</i> <br>C. Pemrograman Dasar Lanjutan</b> <br>
-              Silahkan baca dan pahami materi BAB 2 Bagian C nomor 1 sampai 4 mengenai Pemrograman Dasar
-              Lanjutan.<br>Eksplor
+              <b><i>Materi Pekan ke 4 (Jum'at, 29 Oktober 2021)</i> <br>D. Mengenal Statement Pemilihan dalam PHP</b>
+              <br>
+              Silahkan baca dan pahami materi BAB 2 Bagian D halaman 51 sampai 57 mengenai Statement Pemilihan dalam
+              Bahasa Pemrograman PHP.<br>Eksplor
               pengetahuan kalian menggunakan Internet Browser.</h5>
             <h6 class="text-center">Jika ada yang kurang dimengerti silahkan bertanya/berdiskusi via Grup WA Informatika
               ataupun melalui Personal Chat.
             </h6>
-
-            <h5><b>Video Pembelajaran</b> <br> "Nomor 3 dan 4 (Variabel dan Tipe Data)"</h5>
+            <h5><b>Video Praktek Pembelajaran</b> <br> "Control Structure in PHP"</h5>
           </div>
           <div class="row justify-content-center">
             <div class="col my-3">
-              <a href="https://www.youtube.com/watch?v=4jlhn6V7EN8" class="btn btn-danger text-center"><i
+              <a href="https://www.youtube.com/watch?v=9gpAJPWD-xI" class="btn btn-danger text-center"><i
                   class="bi bi-youtube"></i> Tonton langsung di
                 YouTube</a>
             </div>
-            <iframe width="1280" height="720" src="https://www.youtube.com/embed/4jlhn6V7EN8"
+            <iframe width="1280" height="720" src="https://www.youtube.com/embed/9gpAJPWD-xI"
               title="YouTube video player" frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen></iframe>
@@ -107,22 +108,56 @@
     <br>
     <div class="row justify-content-center m-1">
       <div class="col-md-6">
-        <div class="row">
-          <div class="col pt-2 md-6">
-            <div class="mb-3">
-              <h5><b><i>Absen Pekan ke 3 (Jum'at, 22 Oktober 2021)</i></b><br>Untuk absen silahkan kirimkan foto bukti
-                kalian
-                sedang membaca buku Informatika dan/atau
-                menonton
-                video pembelajaran hari ini ke WA Group Informatika. <br> Tuliskan nama lengkap kalian dan ucapkan
-                hadir..
-              </h5>
-              <h5><i>yee.. Ngga ada Tugas..!!! :D</i></h5>
-            </div>
-          </div>
-        </div>
+        <form name="submit-to-google-sheet">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="mb-3">
+                <h5>Jangan lupa isi absennya yaa, Isi data diri anda dengan baik dan benar!</h5>
+                <label for="nama" class="form-label">Nama Lengkap</label>
+                <input type="text" class="form-control" name="nama" aria-describedby="name" required>
+              </div>
+              <div class="mb-3">
+                <label for="kelas" class="form-label">Kelas</label>
+                <select class="form-select" aria-label="Default select example" name="kelas">
+                  <option value="8A">8A</option>
+                  <option value="8B">8B</option>
+                  <option value="8C">8C</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="tlpn" class="form-label">Masukan Nomor Telepon</label>
+                <input type="number" class="form-control" name="tlpn" aria-describedby="tlpn" required>
+              </div>
+              <div class="mb-3">
+                <label for="link" class="form-label">Masukan 3 Link/Sumber Pencarian Tugas.
+                  <b><i>copas</i></b><br>(Contoh:
+                  https://WebsiteStrukturKontrolPHP)</label>
+                <textarea class="form-control" name="link" rows="3" required></textarea>
+              </div>
+              <div class="alert alert-success alert-dismissible fade show d-none my-alert" role="alert">
+                <strong>Selamat!</strong> Data anda berhasil terkirim.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+              <button type="submit" class="btn btn-primary btn-kirim">Kirim</button>
+              <button class="btn btn-primary btn-loading d-none" type="button" disabled>
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                Loading...
+              </button>
         </form>
       </div>
+      <div class="col pt-2 md-6">
+        <h5>
+          <b><i>Tugas Pekan ke 4 (Jum'at, 29 Oktober 2021)</i></b></h5>
+        <h6>Kontrol flow dalam PHP dibagi menjadi 3, yaitu <b>percabangan (<i>Branching</i>)</b>, <b>perulangan
+            (<i>looping</i>)</b>,
+          dan <b>perpindahan (<i>Jumping</i>)</b>. Carilah informasi mengenai ke 3 kontrol flow tersebut, kemudian
+          tuliskan
+          dalam selembar kertas dan jangan lupa untuk menuliskan nama dan kelas pada lembar pengerjaan. Kumpulkan tugas
+          melalui <b>Google Classroom</b>.
+        </h6>
+      </div>
+    </div>
+    </div>
     </div>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
       <path fill="#0d6efd" fill-opacity="1"
